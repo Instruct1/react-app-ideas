@@ -9,14 +9,15 @@ function App() {
   const handleInput = (e) => {
     const inputValue = e.target.value
     setBinary(inputValue)
+    if (binary.split('').length > 7) {
+      alert(warnMessage)
+    }
   }
 
   const handleConvert = () => {
     if (binary.match(/^[0-1]+$/g) === null) {
       alert(errorMessage)
       return
-    } else if (binary.split('').length > 3) {
-      alert(warnMessage)
     }
     setRes(result)
   }
