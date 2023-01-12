@@ -1,0 +1,36 @@
+.container{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.previewer{
+    width:300px;
+    height:300px;
+    background-color: red; 
+}
+.controlPanel{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 420px;
+    top: 30%;
+    left: 50%;
+}
+.controlItem{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.copyPanel{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.copyItem{
+    display: flex;
+    justify-content:  space-between;
+    margin-bottom: 20px;
+}
