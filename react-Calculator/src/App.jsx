@@ -9,29 +9,21 @@ function App() {
     <div className="App">
       <div className="Calculator">
 
-        <div className="numPanel">
-          {
-            numArr.map(numArr => (
-              <div className="numItem" key={numArr}>
-                <button className="numButton">{numArr}</button>
-              </div>
-            ))
-          }
+        <div className='showPanel'>
+
         </div>
 
         <div className='calcPanel'>
-          <div>+</div>
-          <div>-</div>
-          <div>x</div>
-          <div>÷</div>
-          <div>=</div>
-          <div>+/-</div>
-          <div>.</div>
-          <div>delete</div>
-          <div>AC</div>
+          <div className="calcItem" key={numArr}>
+            <button className="numButton">C</button>
+            <button className="numButton">-/+</button>
+            <button className="numButton">x</button>
+            <button className="numButton">÷</button>
+          </div>
+          
         </div>
-
       </div>
+
     </div>
   )
 }
