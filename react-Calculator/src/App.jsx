@@ -4,10 +4,22 @@ import "tailwindcss/tailwind.css"
 
 function App() {
 
-  const [num, setNum] = useState(0)
+  const [nextValue, setNextValue] = useState('')
+  const [initShow, setrInitShow] = useState(
+    {
+      num: 0,
+      isShow: true
+    }
+  )
 
   const handleNumClick = (e) => {
-    console.log(e.target.innerHTML);
+    const inputValue = e.target.innerHTML
+    setrInitShow(
+        !initShow.isShow
+      )
+    setNextValue(
+      nextValue + inputValue
+    )
   }
 
   return (
@@ -17,7 +29,9 @@ function App() {
         <div
           className='showPanel mb-4 w-60 text-right'
         >
-          {num}
+          {
+            initShow.isShow === true ? initShow.num : nextValue
+          }
         </div>
 
         <div className='calcPanelf flex flex-col'>
@@ -35,28 +49,28 @@ function App() {
             >
               7
             </button>
-            <button className="btn btn-outline ml-2 w-14">8</button>
-            <button className="btn btn-outline ml-2 w-14">9</button>
-            <button className="btn btn-outline ml-2 w-14">x</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>8</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>9</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>x</button>
           </div>
 
           <div className="calcItem mb-2">
-            <button className="btn btn-outline ml-2 w-14">4</button>
-            <button className="btn btn-outline ml-2 w-14">5</button>
-            <button className="btn btn-outline ml-2 w-14">6</button>
-            <button className="btn btn-outline ml-2 w-14">-</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>4</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>5</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>6</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>-</button>
           </div>
 
           <div className="calcItem mb-2">
-            <button className="btn btn-outline ml-2 w-14">1</button>
-            <button className="btn btn-outline ml-2 w-14">2</button>
-            <button className="btn btn-outline ml-2 w-14">3</button>
-            <button className="btn btn-outline ml-2 w-14">+</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>1</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>2</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>3</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>+</button>
           </div>
 
           <div className="calcItem mb-2">
             <button className="btn btn-outline ml-2 w-14">+/-</button>
-            <button className="btn btn-outline ml-2 w-14">0</button>
+            <button className="btn btn-outline ml-2 w-14" onClick={handleNumClick}>0</button>
             <button className="btn btn-outline ml-2 w-14">.</button>
             <button className="btn btn-outline ml-2 w-14">=</button>
           </div>
